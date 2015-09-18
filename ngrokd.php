@@ -4,7 +4,7 @@ require 'fun.php';
 $baseurl = '16116.org';
 
 $sslinfo=array('ssl_cert_file'=>'/home/ssl/server.crt',
-				'ssl_key_file'=>'/home/ssl/domain.crt',
+				'ssl_key_file'=>'/home/ssl/domain.key',
               );
 
 
