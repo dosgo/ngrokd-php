@@ -1,6 +1,6 @@
 # ngrokd-php 
 
-一个简单的ngrokd服务器，使用php写的，需要swoole扩展才行，而且编译swoole扩展的时候必须，加上openssl参数，不然没法使用，可以用来看ngrokd的原理。不推荐部署，正在完善中。
+一个简单的ngrokd服务器，使用php写的，需要swoole扩展才行，而且编译swoole扩展的时候必须，加上openssl参数，不然没法使用，可以用来看ngrokd的原理。不推荐部署，性能堪忧，正在完善中。
 
 
 
