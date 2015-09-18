@@ -2,19 +2,25 @@
 require 'fun.php';
 
 $baseurl = '16116.org';
+
+$sslinfo=array('ssl_cert_file'=>'/home/ssl/server.crt',
+				'ssl_key_file'=>'/home/ssl/domain.crt',
+              );
+
+
 $serv = new swoole_server("0.0.0.0", 9503, SWOOLE_PROCESS, SWOOLE_SOCK_TCP | SWOOLE_SSL);
 $serv->addlistener('0.0.0.0', 9502, SWOOLE_SOCK_TCP); //test
 $serv->addlistener('0.0.0.0', 81, SWOOLE_SOCK_TCP); //http
 $serv->addlistener('0.0.0.0', 448, SWOOLE_SOCK_TCP | SWOOLE_SSL); //https
 
 
-$key_dir = '/home/ssl';
+
 $serv->set(array(
     'worker_num' => 1, //工作进程数量
     //'daemonize' => true, //是否作为守护进程
     'daemonize' => true, //是否作为守护进程
-    'ssl_cert_file' => $key_dir . '/server.crt',
-    'ssl_key_file' => $key_dir . '/domain.key',
+    'ssl_cert_file' => $sslinfo['ssl_cert_file'],
+    'ssl_key_file' => $sslinfo['ssl_key_file'],
 ));
 
 
