@@ -13,4 +13,4 @@
 
 
 
-至于怎么运行嘛，安装好php环境，跟swoole扩展，直接php ngrokd.php就可以了。。。
+至于怎么运行嘛，安装好php环境，跟swoole扩展，直接php ngrokd.php就可以了。。。,记得，修改$baseurl改成你泛域名噢，还有$sslinfo改成你的ssl证书路径。
