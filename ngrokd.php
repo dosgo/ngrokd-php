@@ -1,7 +1,7 @@
 <?php
 
-require 'fun.php';
-require 'ngrok.php';
+require_once 'fun.php';
+require_once 'ngrok.php';
 $baseurl = '16116.org';
 
 $sslinfo = array('ssl_cert_file' => '/home/ssl/server.crt',
@@ -26,8 +26,8 @@ $serv->reqproxylist = array();
 $serv->reglist = array();
 $serv->sockinfolist = array();
 
-$server->on('connect', 'NGROK::connect');
-$server->on('receive', 'NGROK::receive');
-$server->on('close', 'NGROK::close');
+$serv->on('connect', 'NGROK::connect');
+$serv->on('receive', 'NGROK::receive');
+$serv->on('close', 'NGROK::close');
 $serv->start();
 ?>
