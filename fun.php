@@ -1,4 +1,5 @@
 <?php
+
 function Auth($js) {
     $Payload = array(
         'Version' => '2',
@@ -39,7 +40,7 @@ function ReqTunnel($fd, $js) {
 
     global $baseurl;
 
-    if ($js['Payload']['Protocol'] == 'http'||$js['Payload']['Protocol'] == 'https') {
+    if ($js['Payload']['Protocol'] == 'http' || $js['Payload']['Protocol'] == 'https') {
         if (strlen($js['Payload']['Subdomain']) > 0) {
             $url_ = $js['Payload']['Subdomain'];
         } else {
@@ -90,7 +91,7 @@ function RegProxy($fdinfo, $reglist, $fd, $js) {
     global $baseurl;
     $xx = $reglist[0];
 
-    $Payload = array('Url' => $xx['Protocol'].'://' . $xx['Subdomain'] . '.' . $baseurl,
+    $Payload = array('Url' => $xx['Protocol'] . '://' . $xx['Subdomain'] . '.' . $baseurl,
         'ClientAddr' => $fdinfo['remote_ip'] . ':' . $fdinfo['remote_port'],
     );
     $json = array(
@@ -139,6 +140,5 @@ function lentobyte1($len) {
     $xx1 = pack("C4", 0, 0, 0, 0);
     return $xx . $xx1;
 }
-
 
 ?>
